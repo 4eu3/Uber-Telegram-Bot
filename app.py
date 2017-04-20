@@ -4,7 +4,13 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Conv
 from api import botan
 from geopy.geocoders import Nominatim
 import random
+import flask
 import logging
+app = flask.Flask(__name__)
+
+@app.route("/")
+def index():
+return "Hello Heruko"
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
